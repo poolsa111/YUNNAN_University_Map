@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c5b3e4eb72b2f60d223d62d1349c3477 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c5b3e4eb72b2f60d223d62d1349c3477" ></div>
+        
+</body>
+<script>
+    
+    
+var rectangle = document.createElement('div');
+rectangle.style.position = 'fixed';
+rectangle.style.bottom = '30px';  // 调整垂直位置
+rectangle.style.left = '7px';    // 调整水平位置
+rectangle.style.width = '115px';
+rectangle.style.height = '80px';
+rectangle.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+rectangle.style.border = '2px solid blue';
+rectangle.style.zIndex = '999';
+document.body.appendChild(rectangle);
+    
+var links = document.createElement('div');
+links.innerHTML = '<a href="https://720yun.com/t/b2vkiq777i9?scene_id=35580237&scene=2&clicktime=1585745771&enterid=1585745771&from=singlemessage&isappinstalled=0#scene_id=35580236" target="_blank" style="color: blue;">云南大学VR全景</a><br><a href="https://www.ynu.edu.cn/" target="_blank" style="color: blue;">云南大学官网</a>';
+links.style.position = 'fixed';
+links.style.bottom = '40px';
+links.style.left = '10px';
+links.style.zIndex = '999';
+document.body.appendChild(links);
+    
+var text = document.createElement('div');
+text.innerHTML = '<b style="font-size: 16px;">点击进入</b>';
+text.style.position = 'fixed';
+text.style.bottom = '83px';
+text.style.left = '10px';
+text.style.zIndex = '999';
+text.style.color = 'black';  // 设置文本颜色
+document.body.appendChild(text);
+    
+            var map_c5b3e4eb72b2f60d223d62d1349c3477 = L.map(
+                "map_c5b3e4eb72b2f60d223d62d1349c3477",
+                {
+                    center: [24.83, 102.84],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d61ef45afd66c2ca64a45a148619b36d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_d61ef45afd66c2ca64a45a148619b36d.addTo(map_c5b3e4eb72b2f60d223d62d1349c3477);
+        
+    
+            var tile_layer_b4afa2a93a78ff93395661b5324ae7c6 = L.tileLayer(
+                "https://webrd02.is.autonavi.com/appmaptile?lang=zh_en\u0026size=1\u0026scale=1\u0026style=8\u0026x={x}\u0026y={y}\u0026z={z}",
+                {"attribution": "\u9ad8\u5fb7\u5730\u56fe-\u4e2d\u82f1\u6587\u7248", "detectRetina": false, "location": [24.83, 102.84], "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_b4afa2a93a78ff93395661b5324ae7c6.addTo(map_c5b3e4eb72b2f60d223d62d1349c3477);
+        
+    
+            var tile_layer_5f907ded0f92803c35965c03e96a7066 = L.tileLayer(
+                "https://webst02.is.autonavi.com/appmaptile?style=6\u0026x={x}\u0026y={y}\u0026z={z}",
+                {"attribution": "\u9ad8\u5fb7\u536b\u661f\u5730\u56fe", "detectRetina": false, "location": [24.83, 102.84], "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_5f907ded0f92803c35965c03e96a7066.addTo(map_c5b3e4eb72b2f60d223d62d1349c3477);
+        
+    
+            var feature_group_b932fcf456814ec0f0c9bccad88a1a19 = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_c39880c5ae403688a2d72c7662447e87 = L.marker(
+                [24.827, 102.85],
+                {}
+            ).addTo(feature_group_b932fcf456814ec0f0c9bccad88a1a19);
+        
+    
+            var beautify_icon_5a4b4e39e6eba58cb683c40723374b11 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "green", "borderWidth": 3, "icon": "graduation-cap", "iconShape": "circle", "innerIconStyle": "", "isAlphaNumericIcon": false, "spin": false, "textColor": "green"}
+            )
+            marker_c39880c5ae403688a2d72c7662447e87.setIcon(beautify_icon_5a4b4e39e6eba58cb683c40723374b11);
+        
+    
+        var popup_afd171b336e8c472934dd0cde3fdad9a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_31c4c236e3cd20f21f92742e45fcff8c = $(`<div id="html_31c4c236e3cd20f21f92742e45fcff8c" style="width: 100.0%; height: 100.0%;">         <img src="" alt="云南大学 Image" style="width:200px;height:150px;">         <br>         <strong>云南大学</strong>         <p>这是云南大学的说明文字。</p>     </div>`)[0];
+                popup_afd171b336e8c472934dd0cde3fdad9a.setContent(html_31c4c236e3cd20f21f92742e45fcff8c);
+            
+        
+
+        marker_c39880c5ae403688a2d72c7662447e87.bindPopup(popup_afd171b336e8c472934dd0cde3fdad9a)
+        ;
+
+        
+    
+    
+            marker_c39880c5ae403688a2d72c7662447e87.bindTooltip(
+                `<div>
+                     大学
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5364e210f9b2bc98ee6df4b9d4d090d9 = L.marker(
+                [24.8241, 102.8543],
+                {}
+            ).addTo(feature_group_b932fcf456814ec0f0c9bccad88a1a19);
+        
+    
+            var beautify_icon_b1047bb93bd8f1df37c75f352b309c86 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "darkblue", "borderWidth": 3, "icon": "bed", "iconShape": "circle", "innerIconStyle": "", "isAlphaNumericIcon": false, "spin": false, "textColor": "darkblue"}
+            )
+            marker_5364e210f9b2bc98ee6df4b9d4d090d9.setIcon(beautify_icon_b1047bb93bd8f1df37c75f352b309c86);
+        
+    
+        var popup_c5e512f58377bfd23fe2d379fa3c44ac = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a63b0e788e472abc3647ceb9674b5794 = $(`<div id="html_a63b0e788e472abc3647ceb9674b5794" style="width: 100.0%; height: 100.0%;">         <img src="" alt="楸苑 Image" style="width:200px;height:150px;">         <br>         <strong>楸苑</strong>         <p>这是楸苑学生宿舍的说明文字。</p>     </div>`)[0];
+                popup_c5e512f58377bfd23fe2d379fa3c44ac.setContent(html_a63b0e788e472abc3647ceb9674b5794);
+            
+        
+
+        marker_5364e210f9b2bc98ee6df4b9d4d090d9.bindPopup(popup_c5e512f58377bfd23fe2d379fa3c44ac)
+        ;
+
+        
+    
+    
+            marker_5364e210f9b2bc98ee6df4b9d4d090d9.bindTooltip(
+                `<div>
+                     学生宿舍
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_226ad3b6f0bc72bdb65a0dbd2a50fa43 = L.marker(
+                [24.8245, 102.8518],
+                {}
+            ).addTo(feature_group_b932fcf456814ec0f0c9bccad88a1a19);
+        
+    
+            var beautify_icon_c0cb7e08a0d691aaf7cfc36e5eee9c11 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "orange", "borderWidth": 3, "icon": "building", "iconShape": "circle", "innerIconStyle": "", "isAlphaNumericIcon": false, "spin": false, "textColor": "orange"}
+            )
+            marker_226ad3b6f0bc72bdb65a0dbd2a50fa43.setIcon(beautify_icon_c0cb7e08a0d691aaf7cfc36e5eee9c11);
+        
+    
+        var popup_d0fdf1868f0743d7e993c5968dba27e7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a762f71162a9385325bb74f41d0a3e1a = $(`<div id="html_a762f71162a9385325bb74f41d0a3e1a" style="width: 100.0%; height: 100.0%;">         <img src="" alt="格物楼 Image" style="width:200px;height:150px;">         <br>         <strong>格物楼</strong>         <p>这是格物楼的说明文字。</p>     </div>`)[0];
+                popup_d0fdf1868f0743d7e993c5968dba27e7.setContent(html_a762f71162a9385325bb74f41d0a3e1a);
+            
+        
+
+        marker_226ad3b6f0bc72bdb65a0dbd2a50fa43.bindPopup(popup_d0fdf1868f0743d7e993c5968dba27e7)
+        ;
+
+        
+    
+    
+            marker_226ad3b6f0bc72bdb65a0dbd2a50fa43.bindTooltip(
+                `<div>
+                     教学楼
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ea0342e59d85f10d68288adec2114850 = L.marker(
+                [24.8259, 102.855],
+                {}
+            ).addTo(feature_group_b932fcf456814ec0f0c9bccad88a1a19);
+        
+    
+            var beautify_icon_3cab5f4cf02c674c85d220471d397ca7 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "orange", "borderWidth": 3, "icon": "building", "iconShape": "circle", "innerIconStyle": "", "isAlphaNumericIcon": false, "spin": false, "textColor": "orange"}
+            )
+            marker_ea0342e59d85f10d68288adec2114850.setIcon(beautify_icon_3cab5f4cf02c674c85d220471d397ca7);
+        
+    
+        var popup_09716d5b16e6fdec814489a6c998bde8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_48267fb3d92346cec8ff5a1ef95bf96f = $(`<div id="html_48267fb3d92346cec8ff5a1ef95bf96f" style="width: 100.0%; height: 100.0%;">         <img src="" alt="力行楼 Image" style="width:200px;height:150px;">         <br>         <strong>力行楼</strong>         <p>这是力行楼的说明文字。</p>     </div>`)[0];
+                popup_09716d5b16e6fdec814489a6c998bde8.setContent(html_48267fb3d92346cec8ff5a1ef95bf96f);
+            
+        
+
+        marker_ea0342e59d85f10d68288adec2114850.bindPopup(popup_09716d5b16e6fdec814489a6c998bde8)
+        ;
+
+        
+    
+    
+            marker_ea0342e59d85f10d68288adec2114850.bindTooltip(
+                `<div>
+                     教学楼
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d10f880235c1b83ef6a7604670ccfed3 = L.marker(
+                [24.8245, 102.8488],
+                {}
+            ).addTo(feature_group_b932fcf456814ec0f0c9bccad88a1a19);
+        
+    
+            var beautify_icon_924d9c3851f67f57a72130548d51023e = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "green", "borderWidth": 3, "icon": "book", "iconShape": "circle", "innerIconStyle": "", "isAlphaNumericIcon": false, "spin": false, "textColor": "green"}
+            )
+            marker_d10f880235c1b83ef6a7604670ccfed3.setIcon(beautify_icon_924d9c3851f67f57a72130548d51023e);
+        
+    
+        var popup_e96d54a55a67118ea97c5f634a21bc15 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6b2eb5a23e9a07f06915741c02d10b60 = $(`<div id="html_6b2eb5a23e9a07f06915741c02d10b60" style="width: 100.0%; height: 100.0%;">         <img src="" alt="云南大学图书馆 Image" style="width:200px;height:150px;">         <br>         <strong>云南大学图书馆</strong>         <p>这是云南大学图书馆的说明文字。</p>     </div>`)[0];
+                popup_e96d54a55a67118ea97c5f634a21bc15.setContent(html_6b2eb5a23e9a07f06915741c02d10b60);
+            
+        
+
+        marker_d10f880235c1b83ef6a7604670ccfed3.bindPopup(popup_e96d54a55a67118ea97c5f634a21bc15)
+        ;
+
+        
+    
+    
+            marker_d10f880235c1b83ef6a7604670ccfed3.bindTooltip(
+                `<div>
+                     图书馆
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9f68914e5bffa7d2c0fe7ce69d6fe244 = L.marker(
+                [24.829, 102.8492],
+                {}
+            ).addTo(feature_group_b932fcf456814ec0f0c9bccad88a1a19);
+        
+    
+            var beautify_icon_cdea117da0b433f2c77334343765b955 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "red", "borderWidth": 3, "icon": "university", "iconShape": "circle", "innerIconStyle": "", "isAlphaNumericIcon": false, "spin": false, "textColor": "red"}
+            )
+            marker_9f68914e5bffa7d2c0fe7ce69d6fe244.setIcon(beautify_icon_cdea117da0b433f2c77334343765b955);
+        
+    
+        var popup_07b01117fbc237cf356ade32a1d32fba = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9d99bb596a875b69c5aa627ea6a05ca6 = $(`<div id="html_9d99bb596a875b69c5aa627ea6a05ca6" style="width: 100.0%; height: 100.0%;">         <img src="" alt="云南大学明远楼 Image" style="width:200px;height:150px;">         <br>         <strong>云南大学明远楼</strong>         <p>这是云南大学明远楼的说明文字。</p>     </div>`)[0];
+                popup_07b01117fbc237cf356ade32a1d32fba.setContent(html_9d99bb596a875b69c5aa627ea6a05ca6);
+            
+        
+
+        marker_9f68914e5bffa7d2c0fe7ce69d6fe244.bindPopup(popup_07b01117fbc237cf356ade32a1d32fba)
+        ;
+
+        
+    
+    
+            marker_9f68914e5bffa7d2c0fe7ce69d6fe244.bindTooltip(
+                `<div>
+                     行政楼
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_debb1e36351238791985ef1193fb46ec = L.marker(
+                [24.8265, 102.8468],
+                {}
+            ).addTo(feature_group_b932fcf456814ec0f0c9bccad88a1a19);
+        
+    
+            var beautify_icon_06c2fc4b68e4140495690ae61e9e1369 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "red", "borderWidth": 3, "icon": "university", "iconShape": "circle", "innerIconStyle": "", "isAlphaNumericIcon": false, "spin": false, "textColor": "red"}
+            )
+            marker_debb1e36351238791985ef1193fb46ec.setIcon(beautify_icon_06c2fc4b68e4140495690ae61e9e1369);
+        
+    
+        var popup_979d70eee278bc797f51309bd3b4a167 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b9d7919d0e8536876216d8e2dd4244db = $(`<div id="html_b9d7919d0e8536876216d8e2dd4244db" style="width: 100.0%; height: 100.0%;">         <img src="" alt="云南大学学生会堂 Image" style="width:200px;height:150px;">         <br>         <strong>云南大学学生会堂</strong>         <p>这是云南大学学生会堂的说明文字。</p>     </div>`)[0];
+                popup_979d70eee278bc797f51309bd3b4a167.setContent(html_b9d7919d0e8536876216d8e2dd4244db);
+            
+        
+
+        marker_debb1e36351238791985ef1193fb46ec.bindPopup(popup_979d70eee278bc797f51309bd3b4a167)
+        ;
+
+        
+    
+    
+            marker_debb1e36351238791985ef1193fb46ec.bindTooltip(
+                `<div>
+                     行政楼
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_98e4873c6478578559dd1f597abcba6d = L.marker(
+                [24.8299, 102.8421],
+                {}
+            ).addTo(feature_group_b932fcf456814ec0f0c9bccad88a1a19);
+        
+    
+            var beautify_icon_01697caa12fe5f5a97927a08eba9af25 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "darkgreen", "borderWidth": 3, "icon": "tree", "iconShape": "circle", "innerIconStyle": "", "isAlphaNumericIcon": false, "spin": false, "textColor": "darkgreen"}
+            )
+            marker_98e4873c6478578559dd1f597abcba6d.setIcon(beautify_icon_01697caa12fe5f5a97927a08eba9af25);
+        
+    
+        var popup_69694f7215ffa4f6e6f43a6de93dd8f7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_757250913525db5573eb5a6e5f8beb99 = $(`<div id="html_757250913525db5573eb5a6e5f8beb99" style="width: 100.0%; height: 100.0%;">         <img src="" alt="玫瑰园 Image" style="width:200px;height:150px;">         <br>         <strong>玫瑰园</strong>         <p>这是玫瑰园的说明文字。</p>     </div>`)[0];
+                popup_69694f7215ffa4f6e6f43a6de93dd8f7.setContent(html_757250913525db5573eb5a6e5f8beb99);
+            
+        
+
+        marker_98e4873c6478578559dd1f597abcba6d.bindPopup(popup_69694f7215ffa4f6e6f43a6de93dd8f7)
+        ;
+
+        
+    
+    
+            marker_98e4873c6478578559dd1f597abcba6d.bindTooltip(
+                `<div>
+                     公园
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7929c1808258f9ff5b0bb7c0d1d5e7f8 = L.marker(
+                [24.8307, 102.8444],
+                {}
+            ).addTo(feature_group_b932fcf456814ec0f0c9bccad88a1a19);
+        
+    
+            var beautify_icon_3eef6d5add6edde43a5957689f4a580c = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "blue", "borderWidth": 3, "icon": "water", "iconShape": "circle", "innerIconStyle": "", "isAlphaNumericIcon": false, "spin": false, "textColor": "blue"}
+            )
+            marker_7929c1808258f9ff5b0bb7c0d1d5e7f8.setIcon(beautify_icon_3eef6d5add6edde43a5957689f4a580c);
+        
+    
+        var popup_4556dde3a09bb10ca50119891527e47f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8369272d84c4b6dc5fe4298b38c2a11f = $(`<div id="html_8369272d84c4b6dc5fe4298b38c2a11f" style="width: 100.0%; height: 100.0%;">         <img src="" alt="泽湖 Image" style="width:200px;height:150px;">         <br>         <strong>泽湖</strong>         <p>这是泽湖的说明文字。</p>     </div>`)[0];
+                popup_4556dde3a09bb10ca50119891527e47f.setContent(html_8369272d84c4b6dc5fe4298b38c2a11f);
+            
+        
+
+        marker_7929c1808258f9ff5b0bb7c0d1d5e7f8.bindPopup(popup_4556dde3a09bb10ca50119891527e47f)
+        ;
+
+        
+    
+    
+            marker_7929c1808258f9ff5b0bb7c0d1d5e7f8.bindTooltip(
+                `<div>
+                     湖泊
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_20da8f7ba06e14012873e765a9a86bb3 = L.marker(
+                [24.8202, 102.849],
+                {}
+            ).addTo(feature_group_b932fcf456814ec0f0c9bccad88a1a19);
+        
+    
+            var beautify_icon_31c5856c229ff679d4a8206fa06b8eb8 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "purple", "borderWidth": 3, "icon": "running", "iconShape": "circle", "innerIconStyle": "", "isAlphaNumericIcon": false, "spin": false, "textColor": "purple"}
+            )
+            marker_20da8f7ba06e14012873e765a9a86bb3.setIcon(beautify_icon_31c5856c229ff679d4a8206fa06b8eb8);
+        
+    
+        var popup_93ec8ecc7aaa9b38b40f3762cdbbcada = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4197c223bcfcd53cec42710bf9de11cf = $(`<div id="html_4197c223bcfcd53cec42710bf9de11cf" style="width: 100.0%; height: 100.0%;">         <img src="" alt="楠苑操场 Image" style="width:200px;height:150px;">         <br>         <strong>楠苑操场</strong>         <p>这是楠苑操场的说明文字。</p>     </div>`)[0];
+                popup_93ec8ecc7aaa9b38b40f3762cdbbcada.setContent(html_4197c223bcfcd53cec42710bf9de11cf);
+            
+        
+
+        marker_20da8f7ba06e14012873e765a9a86bb3.bindPopup(popup_93ec8ecc7aaa9b38b40f3762cdbbcada)
+        ;
+
+        
+    
+    
+            marker_20da8f7ba06e14012873e765a9a86bb3.bindTooltip(
+                `<div>
+                     操场
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_829018704431429ed35593c5bcd606b2 = L.marker(
+                [24.8277, 102.8587],
+                {}
+            ).addTo(feature_group_b932fcf456814ec0f0c9bccad88a1a19);
+        
+    
+            var beautify_icon_18a194bd7168f2a62c2170c060506f82 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "red", "borderWidth": 3, "icon": "medkit", "iconShape": "circle", "innerIconStyle": "", "isAlphaNumericIcon": false, "spin": false, "textColor": "red"}
+            )
+            marker_829018704431429ed35593c5bcd606b2.setIcon(beautify_icon_18a194bd7168f2a62c2170c060506f82);
+        
+    
+        var popup_f69ea2e6b58a6fa17b9fd1d9cb761341 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ea454a4fa746253e6e0e58129716660e = $(`<div id="html_ea454a4fa746253e6e0e58129716660e" style="width: 100.0%; height: 100.0%;">         <img src="" alt="云南大学校医院 Image" style="width:200px;height:150px;">         <br>         <strong>云南大学校医院</strong>         <p>这是云南大学校医院的说明文字。</p>     </div>`)[0];
+                popup_f69ea2e6b58a6fa17b9fd1d9cb761341.setContent(html_ea454a4fa746253e6e0e58129716660e);
+            
+        
+
+        marker_829018704431429ed35593c5bcd606b2.bindPopup(popup_f69ea2e6b58a6fa17b9fd1d9cb761341)
+        ;
+
+        
+    
+    
+            marker_829018704431429ed35593c5bcd606b2.bindTooltip(
+                `<div>
+                     校医院
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cdefd30c41a2b27b9917ccf5d956beb9 = L.marker(
+                [24.8228, 102.8528],
+                {}
+            ).addTo(feature_group_b932fcf456814ec0f0c9bccad88a1a19);
+        
+    
+            var beautify_icon_42f902798bd38cc2e67bf39090da8847 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "orange", "borderWidth": 3, "icon": "cutlery", "iconShape": "circle", "innerIconStyle": "", "isAlphaNumericIcon": false, "spin": false, "textColor": "orange"}
+            )
+            marker_cdefd30c41a2b27b9917ccf5d956beb9.setIcon(beautify_icon_42f902798bd38cc2e67bf39090da8847);
+        
+    
+        var popup_1940b7adef38d75f8549b9ade481f31d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ae28c5649d6e2d16344a2dd6e1b4b980 = $(`<div id="html_ae28c5649d6e2d16344a2dd6e1b4b980" style="width: 100.0%; height: 100.0%;">         <img src="" alt="云南大学知味堂 Image" style="width:200px;height:150px;">         <br>         <strong>云南大学知味堂</strong>         <p>这是云南大学知味堂的说明文字。</p>     </div>`)[0];
+                popup_1940b7adef38d75f8549b9ade481f31d.setContent(html_ae28c5649d6e2d16344a2dd6e1b4b980);
+            
+        
+
+        marker_cdefd30c41a2b27b9917ccf5d956beb9.bindPopup(popup_1940b7adef38d75f8549b9ade481f31d)
+        ;
+
+        
+    
+    
+            marker_cdefd30c41a2b27b9917ccf5d956beb9.bindTooltip(
+                `<div>
+                     食堂
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dc6f804ac6ab588ec3768f4815a88ecc = L.marker(
+                [24.8287, 102.8437],
+                {}
+            ).addTo(feature_group_b932fcf456814ec0f0c9bccad88a1a19);
+        
+    
+            var beautify_icon_53c095ac684fc2aa4a8751c816ff86d0 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "orange", "borderWidth": 3, "icon": "cutlery", "iconShape": "circle", "innerIconStyle": "", "isAlphaNumericIcon": false, "spin": false, "textColor": "orange"}
+            )
+            marker_dc6f804ac6ab588ec3768f4815a88ecc.setIcon(beautify_icon_53c095ac684fc2aa4a8751c816ff86d0);
+        
+    
+        var popup_ba81c277905f48b12f7b8d3a34a41dda = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_94dff1bcec3c6d225149674f6c7330b7 = $(`<div id="html_94dff1bcec3c6d225149674f6c7330b7" style="width: 100.0%; height: 100.0%;">         <img src="" alt="云南大学余味堂 Image" style="width:200px;height:150px;">         <br>         <strong>云南大学余味堂</strong>         <p>这是云南大学余味堂的说明文字。</p>     </div>`)[0];
+                popup_ba81c277905f48b12f7b8d3a34a41dda.setContent(html_94dff1bcec3c6d225149674f6c7330b7);
+            
+        
+
+        marker_dc6f804ac6ab588ec3768f4815a88ecc.bindPopup(popup_ba81c277905f48b12f7b8d3a34a41dda)
+        ;
+
+        
+    
+    
+            marker_dc6f804ac6ab588ec3768f4815a88ecc.bindTooltip(
+                `<div>
+                     食堂
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_54214c2b0fea7ad44400fa4ea6cc121f = L.marker(
+                [24.827, 102.8428],
+                {}
+            ).addTo(feature_group_b932fcf456814ec0f0c9bccad88a1a19);
+        
+    
+            var beautify_icon_fc137c7ca953723400c0ffd6bbe54de5 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "darkblue", "borderWidth": 3, "icon": "bed", "iconShape": "circle", "innerIconStyle": "", "isAlphaNumericIcon": false, "spin": false, "textColor": "darkblue"}
+            )
+            marker_54214c2b0fea7ad44400fa4ea6cc121f.setIcon(beautify_icon_fc137c7ca953723400c0ffd6bbe54de5);
+        
+    
+        var popup_100aea5b34ec32b49bb1689f3e498fd9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9463f403c6efec369a474730d28333e3 = $(`<div id="html_9463f403c6efec369a474730d28333e3" style="width: 100.0%; height: 100.0%;">         <img src="" alt="梓苑 Image" style="width:200px;height:150px;">         <br>         <strong>梓苑</strong>         <p>这是梓苑学生宿舍的说明文字。</p>     </div>`)[0];
+                popup_100aea5b34ec32b49bb1689f3e498fd9.setContent(html_9463f403c6efec369a474730d28333e3);
+            
+        
+
+        marker_54214c2b0fea7ad44400fa4ea6cc121f.bindPopup(popup_100aea5b34ec32b49bb1689f3e498fd9)
+        ;
+
+        
+    
+    
+            marker_54214c2b0fea7ad44400fa4ea6cc121f.bindTooltip(
+                `<div>
+                     学生宿舍
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_10f3272a556d3133df12904c1e33bd72 = L.marker(
+                [24.8253, 102.8436],
+                {}
+            ).addTo(feature_group_b932fcf456814ec0f0c9bccad88a1a19);
+        
+    
+            var beautify_icon_b878da7c9a9ad7b439cb770aabeb4206 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "black", "borderWidth": 3, "icon": "road", "iconShape": "circle", "innerIconStyle": "", "isAlphaNumericIcon": false, "spin": false, "textColor": "black"}
+            )
+            marker_10f3272a556d3133df12904c1e33bd72.setIcon(beautify_icon_b878da7c9a9ad7b439cb770aabeb4206);
+        
+    
+        var popup_08e1169d5c2caa7369a2fde4d617b428 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5b3cade77c47800eb47fed87c7ee12a6 = $(`<div id="html_5b3cade77c47800eb47fed87c7ee12a6" style="width: 100.0%; height: 100.0%;">         <img src="" alt="云南大学百家大道 Image" style="width:200px;height:150px;">         <br>         <strong>云南大学百家大道</strong>         <p>这是云南大学百家大道的说明文字。</p>     </div>`)[0];
+                popup_08e1169d5c2caa7369a2fde4d617b428.setContent(html_5b3cade77c47800eb47fed87c7ee12a6);
+            
+        
+
+        marker_10f3272a556d3133df12904c1e33bd72.bindPopup(popup_08e1169d5c2caa7369a2fde4d617b428)
+        ;
+
+        
+    
+    
+            marker_10f3272a556d3133df12904c1e33bd72.bindTooltip(
+                `<div>
+                     百家大道
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c1c7202ef2ab03078670494b095612d0 = L.marker(
+                [24.8277, 102.848],
+                {}
+            ).addTo(feature_group_b932fcf456814ec0f0c9bccad88a1a19);
+        
+    
+            var beautify_icon_82843f08de8f3d5e3c750bcd267e5bc2 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "purple", "borderWidth": 3, "icon": "monument", "iconShape": "circle", "innerIconStyle": "", "isAlphaNumericIcon": false, "spin": false, "textColor": "purple"}
+            )
+            marker_c1c7202ef2ab03078670494b095612d0.setIcon(beautify_icon_82843f08de8f3d5e3c750bcd267e5bc2);
+        
+    
+        var popup_a506b6299d8306943b74e41a6c055790 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c7849dc7b8ae3be7ee3b3bc10d96f77a = $(`<div id="html_c7849dc7b8ae3be7ee3b3bc10d96f77a" style="width: 100.0%; height: 100.0%;">         <img src="" alt="云南大学钟楼 Image" style="width:200px;height:150px;">         <br>         <strong>云南大学钟楼</strong>         <p>这是云南大学钟楼的说明文字。</p>     </div>`)[0];
+                popup_a506b6299d8306943b74e41a6c055790.setContent(html_c7849dc7b8ae3be7ee3b3bc10d96f77a);
+            
+        
+
+        marker_c1c7202ef2ab03078670494b095612d0.bindPopup(popup_a506b6299d8306943b74e41a6c055790)
+        ;
+
+        
+    
+    
+            marker_c1c7202ef2ab03078670494b095612d0.bindTooltip(
+                `<div>
+                     钟楼
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            feature_group_b932fcf456814ec0f0c9bccad88a1a19.addTo(map_c5b3e4eb72b2f60d223d62d1349c3477);
+        
+    
+            var feature_group_c90a817b90f6740d136933a591dfb107 = L.featureGroup(
+                {}
+            );
+        
+    
+            var polygon_80c120f25669c5d5aa1967493492c774 = L.polygon(
+                [[24.8298, 102.8384], [24.8182, 102.8469], [24.8189, 102.8497], [24.82, 102.8514], [24.8231, 102.8551], [24.8237, 102.8562], [24.8243, 102.8581], [24.8244, 102.8594], [24.8244, 102.8627], [24.8247, 102.8645], [24.8252, 102.8658], [24.8318, 102.8592], [24.8314, 102.8581], [24.8311, 102.8568], [24.8312, 102.8554], [24.8329, 102.8502], [24.8333, 102.8488], [24.8334, 102.8462], [24.833, 102.8441], [24.8321, 102.8413], [24.8317, 102.8407], [24.8311, 102.8397], [24.8298, 102.8384]],
+                {"bubblingMouseEvents": true, "color": "#ffa500", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffa500", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_c90a817b90f6740d136933a591dfb107);
+        
+    
+            feature_group_c90a817b90f6740d136933a591dfb107.addTo(map_c5b3e4eb72b2f60d223d62d1349c3477);
+        
+    
+            var layer_control_b270e023230ca38ccb570e9532bd8ca8_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_d61ef45afd66c2ca64a45a148619b36d,
+                },
+                overlays :  {
+                    "\u9ad8\u5fb7\u5730\u56fe-\u4e2d\u82f1\u6587\u7248" : tile_layer_b4afa2a93a78ff93395661b5324ae7c6,
+                    "\u9ad8\u5fb7\u536b\u661f\u5730\u56fe" : tile_layer_5f907ded0f92803c35965c03e96a7066,
+                    "\u4e91\u5357\u5927\u5b66\u5730\u6807" : feature_group_b932fcf456814ec0f0c9bccad88a1a19,
+                    "\u4e91\u5357\u5927\u5b66\u8303\u56f4" : feature_group_c90a817b90f6740d136933a591dfb107,
+                },
+            };
+            let layer_control_b270e023230ca38ccb570e9532bd8ca8 = L.control.layers(
+                layer_control_b270e023230ca38ccb570e9532bd8ca8_layers.base_layers,
+                layer_control_b270e023230ca38ccb570e9532bd8ca8_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_c5b3e4eb72b2f60d223d62d1349c3477);
+
+        
+    
+            L.control.fullscreen(
+                {"forceSeparateButton": false, "position": "topleft", "title": "Full Screen", "titleCancel": "Exit Full Screen"}
+            ).addTo(map_c5b3e4eb72b2f60d223d62d1349c3477);
+        
+    
+                var lat_lng_popup_de340123167489daa6efb270be952671 = L.popup();
+                function latLngPop(e) {
+                    lat_lng_popup_de340123167489daa6efb270be952671
+                        .setLatLng(e.latlng)
+                        .setContent("Latitude: " + e.latlng.lat.toFixed(4) +
+                                    "<br>Longitude: " + e.latlng.lng.toFixed(4))
+                        .openOn(map_c5b3e4eb72b2f60d223d62d1349c3477);
+                    }
+                map_c5b3e4eb72b2f60d223d62d1349c3477.on('click', latLngPop);
+            
+    
+            var measure_control_dcda03bd48b3f6b755892425e33945f4 = new L.Control.Measure(
+                {"position": "topleft", "primaryAreaUnit": "sqmeters", "primaryLengthUnit": "kilometers", "secondaryAreaUnit": "acres", "secondaryLengthUnit": "miles"});
+            map_c5b3e4eb72b2f60d223d62d1349c3477.addControl(measure_control_dcda03bd48b3f6b755892425e33945f4);
+
+            // Workaround for using this plugin with Leaflet>=1.8.0
+            // https://github.com/ljagis/leaflet-measure/issues/171
+            L.Control.Measure.include({
+                _setCaptureMarkerIcon: function () {
+                    // disable autopan
+                    this._captureMarker.options.autoPanOnFocus = false;
+                    // default function
+                    this._captureMarker.setIcon(
+                        L.divIcon({
+                            iconSize: this._map.getSize().multiplyBy(2)
+                        })
+                    );
+                },
+            });
+
+        
+    
+            var tile_layer_fb0172400700cbbd36106d02d1dd5296 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_b8b5ab5574514bc1749d9e1f3eb0059d = new L.Control.MiniMap(
+                tile_layer_fb0172400700cbbd36106d02d1dd5296,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": true, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_c5b3e4eb72b2f60d223d62d1349c3477.addControl(mini_map_b8b5ab5574514bc1749d9e1f3eb0059d);
+        
+    
+            tile_layer_d61ef45afd66c2ca64a45a148619b36d.addTo(map_c5b3e4eb72b2f60d223d62d1349c3477);
+        
+    
+            tile_layer_b4afa2a93a78ff93395661b5324ae7c6.addTo(map_c5b3e4eb72b2f60d223d62d1349c3477);
+        
+    
+            tile_layer_5f907ded0f92803c35965c03e96a7066.addTo(map_c5b3e4eb72b2f60d223d62d1349c3477);
+        
+    
+            feature_group_b932fcf456814ec0f0c9bccad88a1a19.addTo(map_c5b3e4eb72b2f60d223d62d1349c3477);
+        
+    
+            feature_group_c90a817b90f6740d136933a591dfb107.addTo(map_c5b3e4eb72b2f60d223d62d1349c3477);
+        
+</script>
+</html>
